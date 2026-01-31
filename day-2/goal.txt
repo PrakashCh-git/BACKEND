@@ -1,0 +1,5 @@
+* Program server to give response to users.
+* Deploying server
+* Understanding what are APIs
+* What is Rest API
+* Creating mini project with rest API
