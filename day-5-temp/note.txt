@@ -1,0 +1,7 @@
+1. Install package express : cd = npm i expresss
+2. Install package mongoose : cd = npm i mongoose
+3. Install nodemon : cd = npm i nodemon
+4. Install dotenv file : cd = npm i dotenv
+5. in server.js file first line require("dotenv").config()
+6. In .env file store your connection string
+7. To make connection to database in place of pasting connection string write : process.env.VARIABLE_NAME in the .env file
