@@ -1,10 +1,15 @@
 const express = require('express');
 const noteModel = require('./models/note-model');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static("./public"));
+
+
+
 
 
 app.post('/api/note',async (req,res)=>{
@@ -49,6 +54,10 @@ app.delete('/api/note/:id',async (req,res)=>{
     res.status(200).json({
         message:"Note deleted successfully"
     })
+})
+
+app.use('*name',(req,res)=>{
+    res.sendFile(path.join(__dirname,"..","/public/index.html"));
 })
 
 
