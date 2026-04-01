@@ -10,7 +10,7 @@ const App = () => {
 
   async function fetchData() {
     try {
-      const note = await axios.get('http://localhost:3000/api/note');
+      const note = await axios.get('https://backend-2-f2xv.onrender.com/api/note');
       setAllnote(note.data.note);
     } catch (error) {
       console.log(error);
@@ -24,7 +24,7 @@ async function submitHandler(e) {
   const description = e.target.description.value;
 
   try {
-    await axios.post("http://localhost:3000/api/note", {
+    await axios.post("https://backend-2-f2xv.onrender.com/api/note", {
       title,
       description
     });
@@ -39,14 +39,14 @@ async function submitHandler(e) {
 
 
 async function deleteHandler(id) {
-  await axios.delete(`http://localhost:3000/api/note/${id}`);
+  await axios.delete(`https://backend-2-f2xv.onrender.com/api/note/${id}`);
   fetchData();
 }
 
 async function updateHandler(e,extra) {
   e.preventDefault();
   const description = e.target.updatedDescription.value;
-  await axios.patch(`http://localhost:3000/api/note/${extra}`, {
+  await axios.patch(`https://backend-2-f2xv.onrender.com/api/note/${extra}`, {
     description
   })
   fetchData();
