@@ -1,0 +1,17 @@
+This is a project to implement 
+
+1. Atuhentication
+    ->Register
+    ->Login
+    ->Logout
+    ->OTP Based Registration
+
+2. Post
+    ->Create
+    ->Can see feeds
+    ->Like Post
+    ->Save Post
+
+3. Users
+    ->Followers
+    ->Following
