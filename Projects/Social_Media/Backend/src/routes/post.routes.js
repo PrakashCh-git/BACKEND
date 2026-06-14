@@ -9,7 +9,8 @@ const identifyUser = require("../middleware/auth.controller")
 
 Router.post("/",upload.single("image"),identifyUser,postController.createPost);
 Router.get("/",identifyUser,postController.getPost);
-Router.get("/details/:postId",identifyUser,postController.getPostDetails)
+Router.get("/details/:postId",identifyUser,postController.getPostDetails);
+Router.post("/like/:postId",identifyUser,postController.likePost);
 
 
 module.exports = Router;
