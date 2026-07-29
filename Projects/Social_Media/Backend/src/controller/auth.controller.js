@@ -89,7 +89,11 @@ async function logInController(req,res) {
         )
 
 
-        res.cookie("token",token);
+        res.cookie("token", token, {
+            httpOnly: true,
+            sameSite: "lax",
+            secure: false,
+        });
 
         res.status(200).json({
             message: "User logged in successfully",
@@ -106,8 +110,22 @@ async function logInController(req,res) {
         console.log(err)
     }
 }
+async function getMeController(req,res) {
+    const userId = req.user.id;
+    const user = await userModel.findById(userId)
+
+    res.status(200).json({
+        user : {
+            userName : user.userName,
+            email: user.email,
+            bio: user.bio,
+            profileImg : user.profileImg
+        }
+    })
+}
 
 module.exports = {
     registerController,
-    logInController
+    logInController,
+    getMeController
 }
